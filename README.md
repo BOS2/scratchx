@@ -22,7 +22,7 @@ Bank of Scratch is a currency for the [Scratch](https://scratch.mit.edu/ "Scratc
 
 Information
 -----
-BOS1 ruled off the assembly lines in October 2017, being the first currency system. It was not as popular as developers had thought, but in the last month of its life some shops and users realized its potential. Quickly BOS gained over 20 users. Then the developer [Csf30816](https://scratch.mit.edu/users/csf30816/ "Csf") decided to restart BOS on ScratchX, this was mainly because some shops asked to be informed when BOS2 would be available.
+BOS1 ruled off the assembly lines in October 2016, being the first currency system. It was not as popular as developers had thought, but in the last month of its life some shops and users realized its potential. Quickly BOS gained over 20 users. Then the developer [Csf30816](https://scratch.mit.edu/users/csf30816/ "Csf") decided to restart BOS on ScratchX, this was mainly because some shops asked to be informed when BOS2 would be available.
 
 How to use
 -----
