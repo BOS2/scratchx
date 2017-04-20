@@ -12,17 +12,20 @@
         $.ajax({
               url: 'http://api.bos2.cf/?type=verify&username=' + username + '&password=' + password,
               dataType: 'jsonp',
-              success: function( weather_data ) {
-                  success = weather_data['success'];
+              success: function( result ) {
+                  success = result['success'];
                   return(success);
               }
         });
     };
+    ext.test = function() {
+        return('oats');
+    }
 
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'Check credentials %s %s', 'verify_acc', 'Username', 'Password'],
+            ['R', 'Check credentials %s %s', 'test', 'Username', 'Password'],
         ]
     };
 
