@@ -10,7 +10,7 @@
 
     ext.verify_acc = function(username, password, callback) {
         $.ajax({
-              url: 'http://api.bos2.cf/?type=signup&username=john&password=doe',
+              url: 'http://api.bos2.cf/?type=verify&username=' + username + '&password=' + password,
               dataType: 'jsonp',
               success: function( weather_data ) {
                   success = weather_data['success'];
