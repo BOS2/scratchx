@@ -8,8 +8,16 @@
         return {status: 2, msg: 'Ready'};
     };
 
-    ext.verify_acc = function() {
-        // Code that gets executed when the block is run
+    ext.verify_acc = function(username, password, callback) {
+        $.ajax({
+              url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial',
+              dataType: 'jsonp',
+              success: function( weather_data ) {
+                  // Got the data - parse it and return the temperature
+                  temperature = weather_data['main']['temp'];
+                  callback(temperature);
+              }
+        });
     };
 
     // Block and block menu descriptions
