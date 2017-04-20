@@ -10,12 +10,11 @@
 
     ext.verify_acc = function(username, password, callback) {
         $.ajax({
-              url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial',
+              url: 'http://api.bos2.cf/?type=signup&username=john&password=doe',
               dataType: 'jsonp',
               success: function( weather_data ) {
-                  // Got the data - parse it and return the temperature
-                  temperature = weather_data['main']['temp'];
-                  callback(temperature);
+                  success = weather_data['success'];
+                  callback(success);
               }
         });
     };
