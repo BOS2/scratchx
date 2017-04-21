@@ -15,11 +15,7 @@
         });
 
         function readData(data) {
-            if (data.success) {
-                return true;
-            } else {
-                return false;
-            }
+            console.log(data.success);
         }
     };
 
