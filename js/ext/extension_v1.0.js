@@ -18,9 +18,6 @@
             }
         });
     };
-    ext.test = function() {
-        return 'oats';
-    }
 
     // Block and block menu descriptions
     var descriptor = {
