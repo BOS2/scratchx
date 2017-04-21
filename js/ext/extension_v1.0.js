@@ -9,14 +9,13 @@
     };
 
     ext.verify_acc = function(user, pass) {
-        $.ajax({
-            url: 'http://api.bos2.cf/?type=verify&username=' + username + '&password=' + password + '&callback=?',
-            dataType: 'jsonp',
-            success: function( result ) {
-                success = result['success'];
-                return success;
-            }
+        var url = 'http://api.bos2.cf/?type=verify&username=' + username + '&password=' + password + '&callback=?';
+        $.getJSON(url, function (data) {
+            success: readData(data)
         });
+        function readData(data) {
+            alert(data[0].success);
+        }
     };
 
     // Block and block menu descriptions
