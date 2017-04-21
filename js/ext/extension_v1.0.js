@@ -15,10 +15,11 @@
         });
 
         function readData(data) {
-            if (data.success === true) {
-                return data.msg;
+            document.cookie = "BOS_msg="+data.msg;
+            if (getCookie("BOS_msg") == 'Verified') {
+                return true;
             } else {
-                return data.msg;
+                return false;
             }
         }
     };
