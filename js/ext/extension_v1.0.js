@@ -8,8 +8,8 @@
         return {status: 2, msg: 'Ready'};
     };
 
-    ext.verify_acc = function(user, pass) {
-        var url = '//api.bos2.cf/?type=verify&username=' + user + '&password=' + pass + '&callback=?';
+    ext.verify_acc = function(username, password) {
+        var url = '//api.bos2.cf/?type=verify&username=' + username + '&password=' + password + '&callback=?';
         $.getJSON(url, function(data) {
             success: readData(data)
         });
