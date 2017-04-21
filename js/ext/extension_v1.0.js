@@ -16,9 +16,9 @@
 
         function readData(data) {
             if (data.success === true) {
-                return true;
+                return data.msg;
             } else {
-                return false;
+                return data.msg;
             }
         }
     };
@@ -26,7 +26,7 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['b', 'Check credentials %s %s', 'verify_acc', 'Username', 'Password'],
+            ['R', 'Check credentials %s %s', 'verify_acc', 'Username', 'Password'],
         ]
     };
 
