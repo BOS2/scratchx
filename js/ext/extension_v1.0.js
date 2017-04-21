@@ -8,15 +8,26 @@
         return {status: 2, msg: 'Ready'};
     };
 
-    ext.verify_acc = function(username, password) {
-        $.ajax({
-              url: 'http://api.bos2.cf/?type=verify&username=' + username + '&password=' + password,
-              dataType: 'json',
-              success: function( result ) {
-                  success = result['success'];
-                  return success;
-              }
-        });
+    ext.verify_acc = function(user, pass) {
+        var url         = "http://api.bos2.cf/?type=verify";
+        var request     = JSON.stringify({username:user,password:pass})
+        var xmlhttp     = new XMLHttpRequest();
+
+        xmlhttp.open("POST", url);
+        xmlhttp.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+        xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
+        xmlhttp.setRequestHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+        xmlhttp.setRequestHeader("Access-Control-Allow-Headers", "Content-Type");
+        xmlhttp.setRequestHeader("Access-Control-Request-Headers", "X-Requested-With, accept, content-type");
+
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var jsondata = JSON.parse(xmlhttp.responseText);
+                return jsondata.success;
+            }
+        };
+
+        xmlhttp.send(request);
     };
     ext.test = function() {
         return 'oats';
