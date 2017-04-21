@@ -8,14 +8,13 @@
         return {status: 2, msg: 'Ready'};
     };
 
-    ext.verify_acc = function(username, password) {
+    ext.verify_acc = function(username, password, callback) {
         var url = '//api.bos2.cf/?type=verify&username=' + username + '&password=' + password + '&callback=?';
-        $.getJSON(url, function(data) {
-            if (data.msg == 'Verified') {
-                return true;
-            }
-            return false;
-        });
+        $.getJSON(url, success);
+
+        function success(data) {
+            return callback(data.success);
+        }
     };
 
     // Block and block menu descriptions
