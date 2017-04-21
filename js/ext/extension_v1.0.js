@@ -9,19 +9,25 @@
     };
 
     ext.verify_acc = function(user, pass) {
-        var url = 'http://api.bos2.cf/?type=verify&username=' + username + '&password=' + password + '&callback=?';
-        $.getJSON(url, function (data) {
+        var url = '//api.bos2.cf/?type=verify&username=' + username + '&password=' + password + '&callback=?';
+        $.getJSON(url, function(data) {
             success: readData(data)
         });
+
         function readData(data) {
-            alert(data[0].success);
+            alert(JSON.stringify(data));
+            if (data.success) {
+                return true;
+            } else {
+                return false;
+            }
         }
     };
 
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'Check credentials %s %s', 'verify_acc', 'Username', 'Password'],
+            ['b', 'Check credentials %s %s', 'verify_acc', 'Username', 'Password'],
         ]
     };
 
