@@ -11,7 +11,7 @@
     ext.verify_acc = function(user, pass) {
         $.ajax({
             url: 'http://api.bos2.cf/?type=verify&username=' + username + '&password=' + password + '&callback=?',
-            dataType: 'json',
+            dataType: 'jsonp',
             success: function( result ) {
                 success = result['success'];
                 return success;
