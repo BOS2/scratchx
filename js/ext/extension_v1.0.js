@@ -15,7 +15,6 @@
         });
 
         function readData(data) {
-            alert(JSON.stringify(data));
             if (data.success) {
                 return true;
             } else {
