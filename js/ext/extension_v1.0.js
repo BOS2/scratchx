@@ -11,7 +11,13 @@
     ext.verify_acc = function(username, password, callback) {
         var url = '//api.bos2.cf/?type=verify&username=' + username + '&password=' + password + '&callback=?';
         $.getJSON(url, function(data) {
-            alert(data.success);
+            if (data.success === undefined) {
+                return false;
+            } else if (data.success === false) {
+                return false;
+            } else {
+                return true;
+            }
         });
     };
 
