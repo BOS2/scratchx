@@ -8,6 +8,22 @@
         return {status: 2, msg: 'Ready'};
     };
 
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+    
     ext.verify_acc = function(username, password) {
         var url = '//api.bos2.cf/?type=verify&username=' + username + '&password=' + password + '&callback=?';
         $.getJSON(url, function(data) {
