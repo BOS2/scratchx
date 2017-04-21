@@ -9,7 +9,7 @@
     };
 
     ext.verify_acc = function(user, pass) {
-        var url = '//api.bos2.cf/?type=verify&username=' + username + '&password=' + password + '&callback=?';
+        var url = '//api.bos2.cf/?type=verify&username=' + user + '&password=' + pass + '&callback=?';
         $.getJSON(url, function(data) {
             success: readData(data)
         });
