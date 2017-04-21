@@ -14,12 +14,12 @@
               dataType: 'jsonp',
               success: function( result ) {
                   success = result['success'];
-                  return(success);
+                  return success;
               }
         });
     };
     ext.test = function() {
-        return('oats');
+        return 'oats';
     }
 
     // Block and block menu descriptions
