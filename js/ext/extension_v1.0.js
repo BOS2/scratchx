@@ -11,15 +11,11 @@
     ext.verify_acc = function(username, password) {
         var url = '//api.bos2.cf/?type=verify&username=' + username + '&password=' + password + '&callback=?';
         $.getJSON(url, function(data) {
-            success: readData(data)
-        });
-
-        function readData(data) {
             if (data.msg == 'Verified') {
                 return true;
             }
             return false;
-        }
+        });
     };
 
     // Block and block menu descriptions
