@@ -34,9 +34,8 @@
             document.cookie = "BOS_msg="+data.msg;
             if (getCookie("BOS_msg") == 'Verified') {
                 return true;
-            } else {
-                return false;
             }
+            return false;
         }
     };
 
