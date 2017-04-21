@@ -43,7 +43,7 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'Check credentials %s %s', 'verify_acc', 'Username', 'Password'],
+            ['b', 'Check credentials %s %s', 'verify_acc', 'Username', 'Password'],
         ]
     };
 
