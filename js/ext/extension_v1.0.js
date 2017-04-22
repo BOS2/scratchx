@@ -44,7 +44,7 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['b', 'Check credentials %s %s', ext.verify_acc, 'Username', 'Password'],
+            ['b', 'Check credentials %s %s', 'verify_acc', 'Username', 'Password'],
         ]
     };
 
