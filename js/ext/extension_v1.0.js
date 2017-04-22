@@ -24,7 +24,7 @@
         return "";
     }
 
-    ext.verify_acc = function(username, password, callback) {
+    ext.verify_acc = function(username, password) {
         var url = '//api.bos2.cf/?type=verify&username=' + username + '&password=' + password + '&callback=?';
         $.getJSON(url, function(data) {
             document.cookie = "BOS_MSG12=" + data.msg;
@@ -44,7 +44,7 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['b', 'Check credentials %s %s', 'verify_acc', 'Username', 'Password'],
+            ['b', 'Check credentials %s %s', ext.verify_acc, 'Username', 'Password'],
         ]
     };
 
