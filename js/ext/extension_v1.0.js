@@ -28,16 +28,14 @@
         var url = '//api.bos2.cf/?type=verify&username=' + username + '&password=' + password + '&callback=?';
         $.getJSON(url, function(data) {
             document.cookie = "BOS_MSG12=" + data.msg;
-            console.log('Cookie Created!');
+            console.log(getCookie('BOS_MSG12'));
         });
         if (getCookie('BOS_MSG12') === 'Verified') {
-            return false;
-            document.cookie = "BOS_MSG12=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-            console.log('Cookie Deleted! FALSE');
-        } else {
             return true;
             document.cookie = "BOS_MSG12=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-            console.log('Cookie Created! TRUE');
+        } else {
+            return false;
+            document.cookie = "BOS_MSG12=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         }
     };
 
