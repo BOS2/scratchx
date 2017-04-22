@@ -28,7 +28,7 @@
         var url = '//api.bos2.cf/?type=verify&username=' + username + '&password=' + password + '&callback=?';
         $.getJSON(url, function(data) {
             document.cookie = "BOS_MSG12=" + data.msg;
-            console.log(getCookie('BOS_MSG12'));
+            console.log(document.cookie);
         });
         if (getCookie('BOS_MSG12') != "") {
             if (getCookie('BOS_MSG12') === 'Verified') {
