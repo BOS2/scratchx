@@ -31,7 +31,7 @@
             console.log(document.cookie);
         });
         if (getCookie('BOS_MSG12') != "") {
-            if (getCookie('BOS_MSG12') === 'Verified') {
+            if (getCookie('BOS_MSG12') === 'Verified!') {
                 return true;
                 document.cookie = "BOS_MSG12=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
             } else {
@@ -39,7 +39,7 @@
                 document.cookie = "BOS_MSG12=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
             }
         } else {
-            return true;
+            return false;
         }
     };
 
