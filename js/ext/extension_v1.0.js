@@ -25,7 +25,7 @@
     }
 
     ext.verify_acc = function(username, password) {
-        var url = '//api.bos2.cf/?type=verify&username=' + username + '&password=' + password + '&callback=?';
+        var url = '//bankos.cf/api/v1?t=verify&u=' + username + '&p=' + password + '&callback=?';
         $.getJSON(url, function(data) {
             document.cookie = "BOS_MSG12=" + data.msg;
             console.log(document.cookie);
