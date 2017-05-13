@@ -22,7 +22,7 @@
     }
     
     ext.hash = function (key) {
-        return fnv32a(key);
+        alert(fnv32a(key));
     };
 
     // Block and block menu descriptions
