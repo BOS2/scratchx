@@ -38,15 +38,24 @@ function postAjax(url, data, success) {
 	ext.check = function (u, p, callback) {
 		postAjax("https://api.bankos.cf/v1/check.php", {user:u, pass:p}, function (data) {
 			var json = JSON.parse(data);
-			console.log(json.hi);
-			callback(json.hi);
+			console.log(json.success);
+			callback(json.success);
 		});
 	};
+	
+	ext.create = function (u, p, callback) {
+		postAjax("https://api.bankos.cf/v1/create.php", {user:u, pass:p}, function (data) {
+			var json = JSON.parse(data);
+			console.log(json.success);
+			callback(json.success);
+		});
+	}
 	
 	// Block and block menu descriptions
 	var descriptor = {
 		blocks: [
 			['R', 'Verify %s %s', 'check'],
+			['R', 'Create %s %s', 'create'],
 		],
 		url: 'https://bos.cf'
 	};
