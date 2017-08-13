@@ -10,18 +10,18 @@ ScratchExtensions.loadExternalJS("http://savaka2.github.io/scratch-extensions-di
         return {status: 2, msg: 'Ready'};
     };
 
+    ext.power = function(base, exponent) {
+        return Math.pow(base, exponent);
+    };
+
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            // Block type, block name, function name
-            ['r', 'my first block', 'my_first_block'],
+            // Block type, block name, function name, param1 default value, param2 default value
+            ['r', '%n ^ %n', 'power', 2, 3],
         ]
-    };
-    
-    ext.my_first_block = function() {
-        return "false";
     };
 
     // Register the extension
-    ScratchExtensions.register('My first extension', descriptor, ext);
+    ScratchExtensions.register('Sample extension', descriptor, ext);
 })({});
