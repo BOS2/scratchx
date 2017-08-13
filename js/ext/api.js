@@ -22,6 +22,13 @@ function getAjax(url, success) {
 		};
 	};
 
+	ext.load = function () {
+		var loader = function (hi) {
+			report hi;
+		}
+		loader("Hey!!");
+	}
+	
 	ext.check = function (u, p) {
 		getAjax(u, function (data) {
 			console.log(data);
@@ -29,14 +36,15 @@ function getAjax(url, success) {
 			return returned;
 		});
 	};
+	
 	// Block and block menu descriptions
 	var descriptor = {
 		blocks: [
+			[' ', 'Load Reporters', 'load'],
 			['r', 'Verify %s %s', 'check'],
 		],
 		url: 'https://bos.cf'
 	};
-
 
 	// Register the extension
 	ScratchExtensions.register('BOS API', descriptor, ext);
