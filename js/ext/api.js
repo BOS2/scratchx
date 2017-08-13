@@ -24,10 +24,10 @@ function getAjax(url, success) {
 	
 	ext.check = function (u, p) {
 		getAjax(u, function (data) {
-			console.log(data);
-			returned = data;
-			return returned;
+			json = JSON.parse(data);
+			console.log(json.hi);
 		});
+		return json.hi;
 	};
 	
 	// Block and block menu descriptions
