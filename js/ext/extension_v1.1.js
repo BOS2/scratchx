@@ -10,16 +10,16 @@ ScratchExtensions.loadExternalJS("http://savaka2.github.io/scratch-extensions-di
         return {status: 2, msg: 'Ready'};
     };
 
-    ext.my_first_block = function() {
-        return "false";
-    };
-
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
             // Block type, block name, function name
             ['r', 'my first block', 'my_first_block'],
         ]
+    };
+    
+    ext.my_first_block = function() {
+        return "false";
     };
 
     // Register the extension
