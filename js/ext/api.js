@@ -36,7 +36,7 @@ function postAjax(url, data, success) {
 	};
 	
 	ext.check = function (u, p, callback) {
-		postAjax("https://api.bankos.cf/v1/check.php?u="+u+"&p="+p, {user:u, pass:p}, function (data) {
+		postAjax("https://api.bankos.cf/v1/check.php", {user:u, pass:p}, function (data) {
 			var json = JSON.parse(data);
 			console.log(json.hi);
 			callback(json.hi);
