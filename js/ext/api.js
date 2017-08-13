@@ -23,7 +23,7 @@ function getAjax(url, success) {
 	};
 	
 	ext.check = function (u, p, callback) {
-		getAjax("https://api.bankos.cf/v1/check/?u="+u+"&p="+p, function (data) {
+		getAjax("https://api.bankos.cf/v1/check.php?u="+u+"&p="+p, function (data) {
 			var json = JSON.parse(data);
 			console.log(json.hi);
 			callback(json.hi);
