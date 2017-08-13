@@ -27,6 +27,7 @@ function getAjax(url, success) {
 			json = JSON.parse(data);
 			console.log(json.hi);
 		});
+		while(json == '' || json == 0 || json == undefined){};
 		return json.hi;
 	};
 	
