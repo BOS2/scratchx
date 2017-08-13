@@ -24,6 +24,7 @@ function getAjax(url, success) {
 
 	ext.check = function (u, p, callback) {
 		getAjax(u, function (data) {
+			console.log(data);
 			return data;
 		});
 	};
