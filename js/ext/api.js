@@ -21,13 +21,6 @@ function getAjax(url, success) {
 			msg: 'Ready'
 		};
 	};
-
-	ext.load = function () {
-		var loader = function (hi) {
-			report hi;
-		}
-		loader("Hey!!");
-	}
 	
 	ext.check = function (u, p) {
 		getAjax(u, function (data) {
@@ -40,7 +33,6 @@ function getAjax(url, success) {
 	// Block and block menu descriptions
 	var descriptor = {
 		blocks: [
-			[' ', 'Load Reporters', 'load'],
 			['r', 'Verify %s %s', 'check'],
 		],
 		url: 'https://bos.cf'
