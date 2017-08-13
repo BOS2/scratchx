@@ -22,19 +22,18 @@ function getAjax(url, success) {
 		};
 	};
 	
-	ext.check = function (u, p) {
+	ext.check = function (u, p, callback) {
 		getAjax(u, function (data) {
-			json = JSON.parse(data);
+			var json = JSON.parse(data);
 			console.log(json.hi);
+			callback(json.hi);
 		});
-		while(json == '' || json == 0 || json == undefined){};
-		return json.hi;
 	};
 	
 	// Block and block menu descriptions
 	var descriptor = {
 		blocks: [
-			['r', 'Verify %s %s', 'check'],
+			['R', 'Verify %s %s', 'check'],
 		],
 		url: 'https://bos.cf'
 	};
