@@ -18,7 +18,7 @@ ScratchExtensions.loadExternalJS("http://savaka2.github.io/scratch-extensions-di
     var descriptor = {
         blocks: [
             // Block type, block name, function name
-            ['R', 'my first block', 'my_first_block'],
+            ['r', 'my first block', 'my_first_block'],
         ]
     };
 
