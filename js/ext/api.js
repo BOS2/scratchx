@@ -18,7 +18,7 @@
 	// Block and block menu descriptions
 	var descriptor = {
 		blocks: [
-			['R', 'Verify %s %s', 'check'],
+			['r', 'Verify %s %s', 'check'],
 		],
 		url: 'https://bankos.cf'
 	};
