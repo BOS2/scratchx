@@ -22,18 +22,19 @@ function getAjax(url, success) {
 		};
 	};
 
-	ext.check = function (u, p, callback) {
+	ext.check = function (u, p) {
 		getAjax(u, function (data) {
 			console.log(data);
-			return data;
+			returned = data;
 		});
+		return returned;
 	};
 	// Block and block menu descriptions
 	var descriptor = {
 		blocks: [
 			['r', 'Verify %s %s', 'check'],
 		],
-		url: 'https://bankos.cf'
+		url: 'https://bos.cf'
 	};
 
 
