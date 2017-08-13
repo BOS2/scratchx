@@ -8,6 +8,19 @@ function getAjax(url, success) {
     xhr.send();
     return xhr;
 }
+function postAjax(url, data, success) {
+    var params = typeof data == 'string' ? data : Object.keys(data).map(function(k){ return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) }).join('&');
+
+    var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+    xhr.open('POST', url);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState>3 && xhr.status==200) { success(xhr.responseText); }
+    };
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.send(params);
+    return xhr;
+}
 (function (ext) {
 
 	// Cleanup function when the extension is unloaded
@@ -23,7 +36,7 @@ function getAjax(url, success) {
 	};
 	
 	ext.check = function (u, p, callback) {
-		getAjax("https://api.bankos.cf/v1/check.php?u="+u+"&p="+p, function (data) {
+		postAjax("https://api.bankos.cf/v1/check.php?u="+u+"&p="+p, {user:u, pass:p}, function (data) {
 			var json = JSON.parse(data);
 			console.log(json.hi);
 			callback(json.hi);
