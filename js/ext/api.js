@@ -27,7 +27,9 @@ function getAjax(url, success) {
 			console.log(data);
 			returned = data;
 		});
-		return returned;
+		if (returned != '') {
+			return "hi";
+		}
 	};
 	// Block and block menu descriptions
 	var descriptor = {
