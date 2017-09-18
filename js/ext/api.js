@@ -96,7 +96,7 @@ var caeser = function(str, num) {
 		blocks: [
 			['R', 'Verify %s %s', 'check'],
 			['R', 'Create %s %s', 'create'],
-			['r', 'Create Session Key %s $s %s', 'randSess'],
+			['r', 'Create Session Key %s %s %s', 'randSess'],
 		],
 		url: 'https://bos.cf'
 	};
